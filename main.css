@@ -1,0 +1,366 @@
+/*PREREQUISITES*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/*NAVBAR*/
+.navb {
+	width:100%;
+	position:fixed;
+	top:0;
+	z-index:999;
+	padding: 15px 20px;
+	transition: 0.4s;
+    background-color: #fff;
+}
+
+.navb h1 {
+	color: #000;
+	font-size: 25px;
+	float:left;
+	margin-left: 7px;
+	transition: 0.4s;
+
+}
+
+.navb .bar{
+	padding-right: 3vw;
+}
+
+.navb .bar a{
+	float: right;
+    display: block;
+	color: #000;
+	font-size: 1.1vw;
+	text-decoration: none;
+	padding: 0.5vw 1vw;
+	margin-right: 0.5;
+    position: relative;
+    transition: 0.5s;
+}
+
+.navb a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #000;
+    height: 2px;
+    transition: all 0.6s;
+}
+
+.navb a:hover::after {
+    width: 100%;
+}
+
+/*HOME*/
+.home {
+	height:100%;
+	width:100%;
+	top:0;
+	right:0;
+	left:0;
+	overflow-x:hidden;
+}
+
+.home::before {
+	position:fixed;
+	background-size:cover;
+	background-attachment:fixed;
+	background-position:top;
+    background-image: url(images/d.png);
+	height:100%;
+	width:100%;
+	z-index:-1;
+	content:"";
+}
+
+/*.home .intro {
+	text-align:center;
+    padding-top: 20%;
+}
+*/
+/*.home .intro h1{
+	font-size:70px;
+	margin:5%;
+	color: #000;
+	text-align:center; 
+    vertical-align: middle;
+}
+*/
+
+/*POP UP*/
+.popup{
+    background-color: #fcba03;
+    width: 600px;
+    height: 430px;
+    padding: 50px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins",sans-serif;
+    display: none; 
+    text-align: center;
+}
+.popup button{
+    display: block;
+    margin:  0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #fcba03;
+    background: #fff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.popup h2{
+  margin-top: -20px;
+  font-size: 25px;
+  padding-top: 10px;
+}
+.popup p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+.popup a{
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
+/*ABOUT*/
+.abt{
+	width: 100%;
+	padding-bottom:5vw;
+	background-color: #fff;
+	padding-top: 9vw;
+}
+
+
+.abt #myImg{
+	width: 500px;
+	height: 350px;
+	padding:0px;
+	margin-bottom:7px;
+	margin-left:10px;
+}
+
+.abt h2{
+	color: #000;
+	font-size: 40px;
+	padding-bottom: 1vw;
+	font-family: 'Hind Vadodara', sans-serif;
+    padding-left: 15px;
+}
+
+.abt p{
+	color: #000;
+	font-family: 'Hind Vadodara', sans-serif;
+	font-size: 18px;
+	padding: 15px;
+    padding-bottom: 0px;
+}
+
+/*NOTICE BOARD THINGY*/
+.notice{
+    width: 100%;
+	padding-bottom:5vw;
+	background-color: #f0f0f0;
+    padding-left: 15px;
+}
+
+.notice h2{
+	color: #000;
+	font-size: 40px;
+	padding-bottom: 1vw;
+	font-family: 'Hind Vadodara', sans-serif;
+    padding-top: 50px;
+}
+
+.notice p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.event img{
+    height: 150px;
+    width: 200px;
+}
+
+.notice .row{
+    padding-top: 20px;
+}
+
+.notice .board{
+    background-color: #fff;
+    padding: 20px;
+}
+
+.board a{
+    color: #000;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.board a:hover{
+    color: #03549a;
+}
+
+.notice .new {
+    -webkit-animation: flicker 0.5s infinite;
+    animation: flicker 0.5s infinite;
+    background-color: #444;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 15px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+/*ACHIEVEMENTS*/
+.achieve{
+    width: 100%;
+	padding-bottom:5vw;
+	background-color: #fcba03;
+}
+
+.achieve h2{ 
+    color: #000;
+	font-size: 40px;
+	padding-bottom: 40px;
+	font-family: 'Hind Vadodara', sans-serif;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.achieve img{
+    height: 200px;
+    width: 260;
+}
+
+.achieve p{
+    text-align: center;
+}
+
+.achieve .row{
+    padding-top: 10px;
+}
+
+/*DHRUVA REACTOR PAGE*/
+.dh {
+	height:45%;
+	width:100%;
+	top:0;
+	right:0;
+	left:0;
+	background-color:rgba(0,0,0,0.7);
+	overflow-x:hidden;
+}
+
+.dh::before {
+	position:absolute;
+	background-size:cover;
+	background-attachment:fixed;
+	background-position:top;
+    background-image: url(images/d.png);
+	height:45%;
+	width:100%;
+	z-index:-1;
+	content:"";
+}
+
+.dh h1 {
+    font-size: 35px;
+    color: #fff;
+    padding-left: 5%;
+    padding-top:12%;
+    
+}
+
+.dh h2 {
+    font-size: 27px;
+    color: #fcba03;
+    padding-left: 5%;
+    
+}
+
+.cont p{
+    font-size: 17px;
+    color: #000;
+    margin-top: 5%;
+}
+
+/*ANIMATIONS*/
+@keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
