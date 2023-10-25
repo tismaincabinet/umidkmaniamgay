@@ -82,7 +82,7 @@ body{
 	background-size:cover;
 	background-attachment:fixed;
 	background-position:top;
-    background-image: url(images/d.png);
+    background-image: url(images/d.jpg);
 	height:100%;
 	width:100%;
 	z-index:-1;
@@ -291,7 +291,7 @@ body{
 	background-size:cover;
 	background-attachment:fixed;
 	background-position:top;
-    background-image: url(images/d.png);
+    background-image: url(images/d.jpg);
 	height:45%;
 	width:100%;
 	z-index:-1;
