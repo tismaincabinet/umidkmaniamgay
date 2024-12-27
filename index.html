@@ -1,131 +1,70 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vrinda Arora | Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="main.css" type="text/css" rel="stylesheet">
-  </head>
-
-    <body>
-        <!--NAVBAR-->
-        <div class="navb">
-        <div class="nav-big">
-            <a href="#home"><h1>pls aur baja kro</h1></a>
-            <div class="bar">
-                <a href="awards.html"><b>Awards</b></a>
-                <a href="about.html"><b>Notices</b></a>
-                <a href="#home"><b>Home</b></a>
-            </div>
-        </div>
-        </div>
-
-        <!--POPUPPP-->
-            <div class="popup">
-                <button id="close">&times;</button>
-                <h2>Congratulations Vrinda you successfully reached the last part of your mini scav hunt </h2>
-                <p>
-                   heartiest congratulations on 16 years of memories , life , joy , learning and moreover - being a better person
-<br><br>
-                    I hope you have made yourself proud!
-                </p>
-            </div>
-
-       <!--HOME-->
-	<div class="home" id="home"></div>
-
-    <!--ABOUT US-->
-    <div class="abt" id="about">
-        <div class="row">
-            <div class="col-md-1"></div>
-           
-            <div class="col-md-5">
-               <h2>Welcome To a lil thank you from my side</h2>
-                <p>
-                    
-VRINDA ARORA IS THE LEADING PERSON IN (MY HEART) EVERYTHING THAT SHE DOES AND I HOPE YOU REALISE HOW AMAZING YOU ARE
-                    <br><br>
-                    <button type="button" class="btn btn-primary btn-m">Year Book</button>
-                
-                </p>
-            </div>
-            <div class="col-md-5">
-			
-                <center> <img id="myImg" src="images/iwouldhi.jpeg" alt="This is me"> </center>
-				    <div id="myModal" class="modal">
-					    <span class="close">&times;</span>
-						<img class="modal-content" id="img01">
-						<div id="caption"></div>
-				    </div>
-					
-            </div>
-            <div class="col-md-1"></div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Pop-In Pop-Out Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/6.jpg');
+            background-size: 50px 50px;
+            background-repeat: repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            border: 5px solid #ff69b4;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .active {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .inactive {
+            transform: scale(0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide active"><img src="images/1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="images/2.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="images/3.jpg" alt="Slide 3"></div>
+        <div class="slide"><img src="images/4.jpg" alt="Slide 4"></div>
+        <div class="slide"><img src="images/5.jpg" alt="Slide 5"></div>
     </div>
-
-    <!--NOTICE BOARD-->
-    <div class="notice">
-        <div class="row">
-            <div class="col-md-1"></div>
-        <div class="col-md-5">
-            <h2>Latest Events</h2>
-            <div class="event">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="images/nodont.jpeg">
-                    </div>
-                    <div class="col-md-7">
-                        <p>insert heart eye emoji x 100</p>
-                    </div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="images/wowidid.jpeg">
-                    </div>
-                    <div class="col-md-7">
-                        <p>BUT I STILL WANNA BE YOUR FAVOITTUUTUEUTR BOIIIIIIIIIIIIIII </p>
-                    </div>
-                </div>
-            </div>
-            <div class="event">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img src="images/wowdiditho.jpeg">
-                    </div>
-                    <div class="col-md-7">
-                        <p>THAT SHOULD BE ME</p>
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <center><button type="button" class="btn btn-primary btn-m">Newsfeed</button></center>
-        </div>
-        <div class="col-md-5">
-            <h2>Notice Board</h2>
-            <div class="board">
-                <a href="#a">BUT I STILL WANNA BE YOUR FAVOURITE BOYYYY</a> <span class="new">New</span><br><br>
-                <a href="#a">THAT SHOULD BE MEEEEEEEEEEEEEEEEEEEEEE</a> <br><br>
-                <a href="#a">I AM VERY SORRY FOR KAL KA JOKE , ONLY MAJAK I PINKY PROMISE</a> <br><br> 
-                <a href="#a">I HOPE U HAVE A GREAT YEAR AND DAY</a><br><br>
-
-            </div>
-            <br><br>
-            <center><button type="button" class="btn btn-primary btn-m">All Circulars</button></center>
-        </div>
-        <div class="col-md-1"></div>
-        </div>
-        </div>     
-        
-        <div class="achieve">
-            <center><h2>Latest Achievements</h2></center>
-
-        </div>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-        <script src="index.js"></script>
-    </body>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[currentIndex].classList.remove('active');
+            slides[currentIndex].classList.add('inactive');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.remove('inactive');
+            slides[currentIndex].classList.add('active');
+        }, 2000);
+    </script>
+</body>
 </html>
