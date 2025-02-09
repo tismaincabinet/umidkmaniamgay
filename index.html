@@ -57,7 +57,7 @@
             font-weight: bold;
             color: white;
             text-align: center;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, background 0.5s ease;
         }
 
         .hidden-text {
@@ -93,12 +93,12 @@
 <body>
     <div class="background-text">If you say no then I always got the males</div>
     <div class="grid-container">
-        <div class="grid-item" onclick="revealText(this, 'Hello')"><img src="images/1.png" width="100%"></div>
-        <div class="grid-item" onclick="revealText(this, 'Please')"><img src="images/2.png" width="100%"></div>
-        <div class="grid-item" onclick="revealText(this, 'Let')"><img src="images/3.png" width="100%"></div>
-        <div class="grid-item" onclick="revealText(this, 'Me Be')"><img src="images/4.png" width="100%"></div>
-        <div class="grid-item" onclick="revealText(this, 'Your Valentine')"><img src="images/5.png" width="100%"></div>
-        <div class="grid-item" onclick="revealText(this, '❤️')"><img src="images/6.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, 'Hello')"><img src="images/1.png" width="100%"><span class="hidden-text">Hello</span></div>
+        <div class="grid-item" onclick="revealText(this, 'Please')"><img src="images/2.png" width="100%"><span class="hidden-text">Please</span></div>
+        <div class="grid-item" onclick="revealText(this, 'Let')"><img src="images/3.png" width="100%"><span class="hidden-text">Let</span></div>
+        <div class="grid-item" onclick="revealText(this, 'Me Be')"><img src="images/4.png" width="100%"><span class="hidden-text">Me Be</span></div>
+        <div class="grid-item" onclick="revealText(this, 'Your Valentine')"><img src="images/5.png" width="100%"><span class="hidden-text">Your Valentine</span></div>
+        <div class="grid-item" onclick="revealText(this, '❤️')"><img src="images/6.png" width="100%"><span class="hidden-text">❤️</span></div>
     </div>
     <div class="message-container" id="finalMessage">
         Hello Vrinda, do you want to like um be my um valentine?
@@ -110,11 +110,11 @@
     <script>
         let revealedCount = 0;
         function revealText(element, text) {
-            element.innerHTML = `<span class='hidden-text'>${text}</span>`;
-            element.style.transform = "rotateY(180deg)";
+            const hiddenText = element.querySelector('.hidden-text');
+            element.innerHTML = `<span>${text}</span>`;
+            element.style.background = "pink";
+            element.style.transform = "scale(1.1)";
             setTimeout(() => {
-                element.innerHTML = text;
-                element.style.transform = "rotateY(0deg)";
                 revealedCount++;
                 if (revealedCount === 6) {
                     document.getElementById('finalMessage').style.display = 'block';
