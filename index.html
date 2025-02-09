@@ -3,68 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farewell.</title>
+    <title>Valentine Proposal</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('images/6.png');
-            background-size: 50px 50px;
-            background-repeat: repeat;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
+            background: black;
             overflow: hidden;
-        }
-        .slideshow-container {
             position: relative;
-            width: 400px;
-            height: 400px;
-            overflow: hidden;
-            border: 5px solid #ff69b4;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
-        .slide {
+
+        @keyframes movingText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .background-text {
             position: absolute;
+            top: 50%;
             width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            white-space: nowrap;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgba(255, 105, 180, 0.8);
+            animation: movingText 10s linear infinite;
         }
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-gap: 10px;
+            position: relative;
+            z-index: 2;
         }
-        .active {
-            opacity: 1;
-            transform: scale(1.1);
+
+        .grid-item {
+            width: 150px;
+            height: 150px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+            overflow: hidden;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            transition: transform 0.5s ease;
         }
-        .inactive {
-            transform: scale(0.8);
+
+        .hidden-text {
+            display: none;
         }
+
+        .message-container {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+        }
+
+        .yes-btn { background: pink; }
+        .no-btn { background: grey; pointer-events: none; opacity: 0.5; }
     </style>
 </head>
 <body>
-    <div class="slideshow-container">
-        <div class="slide active"><img src="images/1.png" alt="Slide 1"></div>
-        <div class="slide"><img src="images/2.png" alt="Slide 2"></div>
-        <div class="slide"><img src="images/3.png" alt="Slide 3"></div>
-        <div class="slide"><img src="images/4.png" alt="Slide 4"></div>
-        <div class="slide"><img src="images/5.png" alt="Slide 5"></div>
+    <div class="background-text">If you say no then I always got the males</div>
+    <div class="grid-container">
+        <div class="grid-item" onclick="revealText(this, 'Hello')"><img src="images/1.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, 'Please')"><img src="images/2.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, 'Let')"><img src="images/3.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, 'Me Be')"><img src="images/4.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, 'Your Valentine')"><img src="images/5.png" width="100%"></div>
+        <div class="grid-item" onclick="revealText(this, '❤️')"><img src="images/6.png" width="100%"></div>
+    </div>
+    <div class="message-container" id="finalMessage">
+        Hello Vrinda, do you want to like um be my um valentine?
+        <div class="buttons">
+            <button class="yes-btn" onclick="showPopup()">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
     </div>
     <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        setInterval(() => {
-            slides[currentIndex].classList.remove('active');
-            slides[currentIndex].classList.add('inactive');
-            currentIndex = (currentIndex + 1) % slides.length;
-            slides[currentIndex].classList.remove('inactive');
-            slides[currentIndex].classList.add('active');
-        }, 2000);
+        let revealedCount = 0;
+        function revealText(element, text) {
+            element.innerHTML = `<span class='hidden-text'>${text}</span>`;
+            element.style.transform = "rotateY(180deg)";
+            setTimeout(() => {
+                element.innerHTML = text;
+                element.style.transform = "rotateY(0deg)";
+                revealedCount++;
+                if (revealedCount === 6) {
+                    document.getElementById('finalMessage').style.display = 'block';
+                }
+            }, 500);
+        }
+        function showPopup() {
+            alert("Call me @ 9667962242");
+        }
     </script>
 </body>
 </html>
